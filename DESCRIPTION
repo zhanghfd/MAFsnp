@@ -1,9 +1,16 @@
 Package: MAFsnp
-Title: What the Package Does (one line, title case)
-Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-Depends: R (>= 3.3.1)
-License: What license is it under?
+Title: MAFsnp: A multi-sample accurate and flexible SNP caller using next-
+    generation sequencing data
+Version: 1.0
+Author: Jiyuan Hu
+Maintainer: Jiyuan Hu <jiyuan_hu@fudan.edu.cn>
+Description: MAFsnp is an R package for detecting SNPs using next-generation
+    sequencing data from multiple samples.
+Depends:
+    R (>= 3.3.1)
+License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
+URL: http://github.com/zhanghfd/MAFsnp
+BugReports: http://github.com/zhanghfd/MAFsnp/issues
+RoxygenNote: 5.0.1
