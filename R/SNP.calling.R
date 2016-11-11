@@ -1,20 +1,20 @@
 SNP.calling <-
 function(d,FDR=0.01){  
-  qval = d$q.value;
-  pval = d$p.value;
+  p.fdr = d$p.fdr;
+  p.val = d$p.value;
   Xsum = d$Xsum;
   M = length(Xsum);
   position = d$position[Xsum>0];
   
-  called.snps = function(qval,index)
+  called.snps = function(p.fdr,index)
   {
-    ind = which(qval<FDR);
-    snp = index[ind];
-    cbind(snp,pval[ind],qval[ind]);
+    ind = which(p.fdr<FDR);
+    cbind(index[ind],p.fdr[ind],p.fdr[ind]);
   }
-  SNPs = called.snps(qval,position);	
-  colnames(SNPs)=c('position','p.value','q.value');
+  SNPs = called.snps(p.fdr,position);	
+  colnames(SNPs)=c('position','p.value','p.fdr');
   d$snps = SNPs;
-  rm(pval,qval,SNPs,position);gc();
+  rm(p.fdr,SNPs,position);
+  gc();
   return (d);
 }

@@ -5,7 +5,7 @@
 MAFsnp object
 }
 \description{
-Create an MAFsnp object.
+Creation of an MAFsnp object.
 }
 \usage{
 MAFobj(d)
@@ -13,22 +13,22 @@ MAFobj(d)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{d}{
-This is either a simulation data list by "gen.count.data()" or a real data list containing the read count matrix, positions of nucleotide locus, the true SNP status obtain from dbSNP or other public database.
+This is list containing the read count matrix, positions of nucleotide locus, and true SNP statuses obtained from dbSNP or any other public database.
 }
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-\item{X}{The variant count matrix}
-\item{N}{The coverage count matrix}
-\item{Xsum}{The summation of variation neocleotide for each locus}
+\item{X}{Variant count matrix}
+\item{N}{Coverage count matrix}
+\item{Xsum}{Number of variants (across all samples) for each locus}
 }
 \references{
-%% ~put references to the literature/web site here ~
+Hu J, Li T, Xiu Z, Zhang H. (2015) MAFsnp: A Multi-sample Accurate and Flexible SNP Caller Using Next-generation Sequencing Data. PLoS ONE 10(8): e0135332. doi:10.1371/journal.pone.0135332.
 }
 \author{
-%%  ~~who you are~~
+Jiyuan Hu
 }
 \note{
 %%  ~~further notes~~
@@ -41,12 +41,12 @@ This is either a simulation data list by "gen.count.data()" or a real data list 
 }
 \examples{
 
-e=0.01;nSample = 50;N =5;SNPtype =3;M=1e3;
+e = 0.01; nSample = 50; N = 5; SNPtype = 3; M = 1e3;
 d = gen.count.data(ErrorProb=e,nSample=nSample,N=N,SNPtype=SNPtype,M=M);
 d = MAFobj(d);
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ object}
+
